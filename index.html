@@ -19,8 +19,9 @@
     setInterval(function() {
         n_minutes_to_wait_until_refresh = 1
         imageIndex = (imageIndex + 1) % images.length; // This ensures it loops back to the start after the last image
-        slideshowElement.src = images[imageIndex];
+        // slideshowElement.src = images[imageIndex];
         let cacheBustedURL = images[imageIndex] + "?" + new Date().getTime();
+        slideshowElement.src = cacheBustedURL;
     }, 5*n_minutes_to_wait_until_refresh*1000); // Change the image every 5 seconds
 </script>
 
